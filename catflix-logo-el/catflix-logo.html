@@ -1,0 +1,28 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="catflix-logo">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <a href="#"><img src="../logo.png" alt="Catflix" title="Catflix"></a>
+  </template>
+
+  <script>
+    /**
+     * `catflix-logo`
+     *
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class CatflixLogo extends Polymer.Element {
+      static get is() { return 'catflix-logo'; }
+    }
+
+    window.customElements.define(CatflixLogo.is, CatflixLogo);
+  </script>
+</dom-module>

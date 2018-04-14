@@ -1,0 +1,36 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="catflix-cta">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]!</h2>
+  </template>
+
+  <script>
+    /**
+     * `catflix-cta`
+     * 
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class CatflixCta extends Polymer.Element {
+      static get is() { return 'catflix-cta'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'catflix-cta'
+          }
+        };
+      }
+    }
+
+    window.customElements.define(CatflixCta.is, CatflixCta);
+  </script>
+</dom-module>
