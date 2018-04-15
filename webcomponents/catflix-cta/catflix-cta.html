@@ -24,12 +24,16 @@
         // Attach a shadow root to the element.
         let shadowRoot = this.attachShadow({mode: 'open'});
         shadowRoot.appendChild(tmpl.content.cloneNode(true));
-        shadowRoot.querySelector('h1').textContent = this.text;
+
+        // doesn't work in Angular otherwise... not sure why
+        setTimeout(()=> {
+          shadowRoot.querySelector('h1').textContent = this.text;
+        }, 1);
       }
 
       get text() {
-          return this.getAttribute('text');
-        }
+        return this.getAttribute('text');
+      }
 
       set text(newText) {
         this.setAttribute('text', newText);

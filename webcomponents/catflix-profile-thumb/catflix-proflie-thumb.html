@@ -82,11 +82,14 @@
           const shadowRoot = this.attachShadow({mode: 'open'});
           shadowRoot.appendChild(tmpl.content.cloneNode(true));
 
-          const profileIcon = shadowRoot.querySelector('.profile-icon');
-          const profileName = shadowRoot.querySelector('.profile-name');
+          // doesn't work in Angular otherwise... not sure why
+          setTimeout(()=> {
+            const profileIcon = shadowRoot.querySelector('.profile-icon');
+            const profileName = shadowRoot.querySelector('.profile-name');
 
-          profileIcon.style = `background-image:url(${this.img})`;
-          profileName.textContent = this.name;
+            profileIcon.style = `background-image:url(${this.img})`;
+            profileName.textContent = this.name;
+          }, 1);
         }
 
         get img() {
