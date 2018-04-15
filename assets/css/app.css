@@ -41,6 +41,7 @@ body {
 
 .profiles catflix-profile-thumb {
   margin: 0 1vw;
+  float: left;
 }
 
 .manage {
