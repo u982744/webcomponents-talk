@@ -27,11 +27,22 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <div class="container">
-            <div class="logo">logo</div>
-            <div class="cta">cta</div>
-            <div class="profiles">profiles</div>
-            <div class="manage">manage</div>
+        <div class="container flex">
+            <div class="logo">
+                <catflix-logo></catflix-logo>
+            </div>
+            <div class="cta">
+                <catflix-cta text="Who's watching?"></catflix-cta>
+            </div>
+            <div class="profiles">
+                <catflix-profile-thumb img="/assets/imgs/cat-2.jpg" name="Cee cee"></catflix-profile-thumb>
+                <catflix-profile-thumb img="/assets/imgs/cat-3.jpg" name="Cupcake"></catflix-profile-thumb>
+                <catflix-profile-thumb img="/assets/imgs/cat-6.jpg" name="Tweet tweet"></catflix-profile-thumb>
+                <catflix-profile-thumb img="/assets/imgs/cat-7.png" name="Garfield"></catflix-profile-thumb>
+            </div>
+            <div class="manage">
+                <catflix-button>Manage profiles</catflix-button>
+            </div>
         </div>
 
         <script src="js/vendor/modernizr-3.5.0.min.js"></script>
