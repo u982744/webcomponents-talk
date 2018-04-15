@@ -1,0 +1,17 @@
+{
+  "name": "catflix-html5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "start": "http-server ./ -p 6003 -o"
+  },
+  "author": "Tim Berman",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  }
+}

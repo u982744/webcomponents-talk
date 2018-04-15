@@ -1,0 +1,84 @@
+<template id="catflix-profile-thumb">
+    <style>
+      :host {
+        display: inline-block;
+        font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      a:hover {
+        cursor: pointer;
+        outline: 0;
+      }
+
+      .avatar-wrapper {
+        position: relative;
+      }
+
+      .profile-icon {
+        height: 10vw;
+        width: 10vw;
+        max-height: 200px;
+        max-width: 200px;
+        min-height: 84px;
+        min-width: 84px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        position: relative;
+        text-decoration: none;
+        border: .3em solid rgba(0,0,0,.4);
+        background-repeat: no-repeat;
+        -moz-background-size: cover;
+        background-size: cover;
+        background-color: #333;
+      }
+
+      a:hover .profile-icon {
+        border-color: #e5e5e5;
+      }
+
+      .profile-name {
+        font-size: 12px;
+        line-height: 1.2em;
+        min-height: 2.4em;
+        color: grey;
+        display: block;
+        text-align: center;
+        font-size: 2vw;
+        margin: .8em 0;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+
+      a:hover .profile-name {
+        color: #e5e5e5;
+      }
+    </style>
+    <a href="#">
+      <div class="avatar-wrapper">
+        <div class="profile-icon" style="background-image:url(https://assets.nflxext.com/ffe/profiles/avatars_v2/320x320/PICON_013.png);"></div>
+      </div>
+      <span class="profile-name">Tim</span>
+    </a>
+  </template>
+
+  <script>
+    (() => {
+      let tmpl = document.currentScript.ownerDocument.querySelector('#catflix-profile-thumb');
+
+      window.customElements.define('catflix-profile-thumb', class extends HTMLElement {
+        constructor() {
+          super();
+
+          // Attach a shadow root to the element.
+          let shadowRoot = this.attachShadow({mode: 'open'});
+          shadowRoot.appendChild(tmpl.content.cloneNode(true));
+        }
+      });
+    })()
+  </script>

@@ -1,0 +1,30 @@
+<template id="catflix-cta">
+  <style>
+    :host {
+      font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+      font-weight: normal;
+      width: 100%;
+      color: #fff;
+      font-size: 1.85vw;
+    }
+  </style>
+  <h1>
+    <slot></slot>
+  </h1>
+</template>
+
+<script>
+  (() => {
+    let tmpl = document.currentScript.ownerDocument.querySelector('#catflix-cta');
+
+    window.customElements.define('catflix-cta', class extends HTMLElement {
+      constructor() {
+        super();
+
+        // Attach a shadow root to the element.
+        let shadowRoot = this.attachShadow({mode: 'open'});
+        shadowRoot.appendChild(tmpl.content.cloneNode(true));
+      }
+    });
+  })()
+</script>

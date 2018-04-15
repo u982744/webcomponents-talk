@@ -1,0 +1,31 @@
+<template id="catflix-button">
+    <style>
+      a {
+        border: 1px solid grey;
+        color: grey;
+        text-transform: uppercase;
+        padding: .5em 1.5em;
+        letter-spacing: 2px;
+        cursor: pointer;
+        font-size: .7em;
+        text-decoration: none;
+      }
+    </style>
+    <a href="#"><slot></slot></a>
+  </template>
+
+  <script>
+    (() => {
+      let tmpl = document.currentScript.ownerDocument.querySelector('#catflix-button');
+
+      window.customElements.define('catflix-button', class extends HTMLElement {
+        constructor() {
+          super();
+
+          // Attach a shadow root to the element.
+          let shadowRoot = this.attachShadow({mode: 'open'});
+          shadowRoot.appendChild(tmpl.content.cloneNode(true));
+        }
+      });
+    })()
+  </script>
