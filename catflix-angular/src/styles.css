@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+    --catflix-color-primary: rgb(51, 2, 44);
+    --catflix-color-secondary: rgb(116, 51, 89);
+    --catflix-color-border: rgb(255, 5, 192);
+}
+
+body {
+    background-color: rgb(238, 170, 235);
+}

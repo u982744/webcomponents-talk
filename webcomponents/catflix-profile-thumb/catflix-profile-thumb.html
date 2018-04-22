@@ -30,7 +30,7 @@
         box-sizing: border-box;
         position: relative;
         text-decoration: none;
-        border: .3em solid rgba(0,0,0,.4);
+        border: .3em solid var(--catflix-color-secondary, rgba(0,0,0,.4));
         background-repeat: no-repeat;
         -moz-background-size: cover;
         background-size: cover;
@@ -39,14 +39,14 @@
       }
 
       a:hover .profile-icon {
-        border-color: #e5e5e5;
+        border-color: var(--catflix-color-primary, white);
       }
 
       .profile-name {
         font-size: 12px;
         line-height: 1.2em;
         min-height: 2.4em;
-        color: grey;
+        color: var(--catflix-color-secondary, grey);
         display: block;
         text-align: center;
         font-size: 1.3vw;
@@ -57,7 +57,7 @@
       }
 
       a:hover .profile-name {
-        color: #e5e5e5;
+        color: var(--catflix-color-primary, white);
       }
     </style>
     <a href="#">
@@ -73,6 +73,7 @@
   <script>
     (() => {
       let tmpl = document.currentScript.ownerDocument.querySelector('#catflix-profile-thumb');
+      let templateBaseUrl = tmpl.baseURI.replace('catflix-profile-thumb.html', '');
 
       window.customElements.define('catflix-profile-thumb', class extends HTMLElement {
         constructor() {
@@ -84,11 +85,14 @@
 
           // doesn't work in Angular otherwise... not sure why
           setTimeout(()=> {
+            // const avatarWrapper = shadowRoot.querySelector('.avatar-wrapper');
             const profileIcon = shadowRoot.querySelector('.profile-icon');
             const profileName = shadowRoot.querySelector('.profile-name');
 
             profileIcon.style = `background-image:url(${this.img})`;
             profileName.textContent = this.name;
+
+            // avatarWrapper.style = `clip-path: url(${templateBaseUrl}cat-silhouette.svg#cat)`;
           }, 1);
         }
 

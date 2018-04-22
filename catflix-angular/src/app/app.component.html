@@ -1,3 +1,8 @@
+<catflix-modal
+    *ngFor='let modal of modals'
+    [attr.url]="'https://www.youtube.com/embed/' + modal.id + '?rel=0'"
+    [attr.open]='modal.open'></catflix-modal>
+
 <div class="container flex">
     <div class="logo">
         <catflix-logo></catflix-logo>
@@ -6,10 +11,11 @@
         <catflix-cta text="Who's watching?"></catflix-cta>
     </div>
     <div class="profiles">
-        <catflix-profile-thumb img="/assets/imgs/cat-2.jpg" name="Cee cee"></catflix-profile-thumb>
-        <catflix-profile-thumb img="/assets/imgs/cat-3.jpg" name="Cupcake"></catflix-profile-thumb>
-        <catflix-profile-thumb img="/assets/imgs/cat-6.jpg" name="Tweet tweet"></catflix-profile-thumb>
-        <catflix-profile-thumb img="/assets/imgs/cat-7.png" name="Garfield"></catflix-profile-thumb>
+        <catflix-profile-thumb
+            *ngFor="let profile of profiles; let i = index"
+            [attr.img]="'/assets/imgs/' + profile.img"
+            [name]="profile.name"
+            (click)='viewVideo(i)'></catflix-profile-thumb>
     </div>
     <div class="manage">
         <catflix-button>Manage profiles</catflix-button>

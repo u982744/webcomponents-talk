@@ -1,8 +1,8 @@
 <template id="catflix-button">
     <style>
       a {
-        border: 1px solid grey;
-        color: grey;
+        border: 1px solid var(--catflix-color-secondary, grey);
+        color: var(--catflix-color-secondary, grey);
         text-transform: uppercase;
         padding: .5em 1.5em;
         letter-spacing: 2px;
@@ -12,8 +12,8 @@
       }
 
       a:hover {
-        color: #fff;
-        border: 1px solid #fff;
+        color: var(--catflix-color-primary, #fff);
+        border: 1px solid var(--catflix-color-primary, #fff);
       }
     </style>
     <a href="#"><slot></slot></a>

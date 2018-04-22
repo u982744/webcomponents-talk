@@ -16,6 +16,14 @@
     let templateBaseUrl = tmpl.baseURI.replace('catflix-logo.html', '');
 
     window.customElements.define('catflix-logo', class extends HTMLElement {
+      get img() {
+        return this.getAttribute('img');
+      }
+
+      set img(newImg) {
+        this.setAttribute('img', newImg);
+      }
+
       constructor() {
         super();
 
@@ -23,8 +31,13 @@
         let shadowRoot = this.attachShadow({mode: 'open'});
         shadowRoot.appendChild(tmpl.content.cloneNode(true));
 
-        let img = shadowRoot.querySelector('img');
-        img.src = `${templateBaseUrl}logo.png`;
+        // doesn't work in Angular otherwise... not sure why
+        setTimeout(()=> {
+          console.log("this.img", this.img);
+          let imgPath = this.img === null ? `${templateBaseUrl}logo2.png` : this.img;
+          let img = shadowRoot.querySelector('img');
+          img.src = imgPath;
+        }, 1);
       }
     });
   })()

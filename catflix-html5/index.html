@@ -16,10 +16,23 @@
         <link rel="stylesheet" href="assets/css/fonts.css">
         <link rel="stylesheet" href="assets/css/app.css">
 
-        <link rel="import" href="catflix-logo/catflix-logo.html">
-        <link rel="import" href="catflix-cta/catflix-cta.html">
-        <link rel="import" href="catflix-profile-thumb/catflix-proflie-thumb.html">
-        <link rel="import" href="catflix-button/catflix-button.html">
+        <style>
+            :root {
+                --catflix-color-primary: rgb(59, 34, 28);
+                --catflix-color-secondary: rgb(82, 64, 56);
+                --catflix-color-border: rgba(255, 255, 255,.4);
+            }
+
+            body {
+                background-color: rgb(168, 131, 109);
+            }
+        </style>
+
+        <link rel="import" href="assets/webcomponents/catflix-logo/catflix-logo.html">
+        <link rel="import" href="assets/webcomponents/catflix-cta/catflix-cta.html">
+        <link rel="import" href="assets/webcomponents/catflix-profile-thumb/catflix-profile-thumb.html">
+        <link rel="import" href="assets/webcomponents/catflix-button/catflix-button.html">
+        <link rel="import" href="assets/webcomponents/catflix-modal/catflix-modal.html">
     </head>
     <body>
         <!--[if lte IE 9]>
@@ -27,18 +40,23 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
+        <catflix-modal url="https://www.youtube.com/embed/nGeKSiCQkPw?rel=0"></catflix-modal>
+        <catflix-modal url="https://www.youtube.com/embed/AZoEJBsjjuY?rel=0"></catflix-modal>
+        <catflix-modal url="https://www.youtube.com/embed/CQzUsTFqtW0?rel=0"></catflix-modal>
+        <catflix-modal url="https://www.youtube.com/embed/qXo3NFqkaRM?rel=0"></catflix-modal>
+
         <div class="container flex">
             <div class="logo">
-                <catflix-logo></catflix-logo>
+                <catflix-logo img='img/dogflix-logo.png'></catflix-logo>
             </div>
             <div class="cta">
                 <catflix-cta text="Who's watching?"></catflix-cta>
             </div>
             <div class="profiles">
-                <catflix-profile-thumb img="/assets/imgs/cat-2.jpg" name="Cee cee"></catflix-profile-thumb>
-                <catflix-profile-thumb img="/assets/imgs/cat-3.jpg" name="Cupcake"></catflix-profile-thumb>
-                <catflix-profile-thumb img="/assets/imgs/cat-6.jpg" name="Tweet tweet"></catflix-profile-thumb>
-                <catflix-profile-thumb img="/assets/imgs/cat-7.png" name="Garfield"></catflix-profile-thumb>
+                <catflix-profile-thumb img="img/dog1.jpeg" name="Pooch"></catflix-profile-thumb>
+                <catflix-profile-thumb img="img/dog2.jpg" name="Mr Charlie"></catflix-profile-thumb>
+                <catflix-profile-thumb img="img/dog3.jpg" name="Pickle"></catflix-profile-thumb>
+                <catflix-profile-thumb img="img/dog4.jpg" name="Walter"></catflix-profile-thumb>
             </div>
             <div class="manage">
                 <catflix-button>Manage profiles</catflix-button>

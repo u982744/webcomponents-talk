@@ -1,0 +1,124 @@
+<template id="catflix-modal">
+  <style>
+    .modal-outer {
+      position: fixed;
+      display: none;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 1;
+    }
+
+    .modal-outer.open {
+      display: block;
+    }
+
+    .modal-outer .iframe {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      cursor: pointer;
+      color: var(--catflix-color-secondary, white);
+      text-transform: uppercase;
+      font-size: 40px;
+    }
+  </style>
+  <div class="modal-outer">
+    <div class="close">X</div>
+    <iframe
+      class="iframe"
+      width="560"
+      height="315"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen></iframe>
+  </div>
+</template>
+
+<script>
+  (() => {
+    let tmpl = document.currentScript.ownerDocument.querySelector('#catflix-modal');
+    let templateBaseUrl = tmpl.baseURI.replace('catflix-modal.html', '');
+
+    window.customElements.define('catflix-modal', class extends HTMLElement {
+      static get observedAttributes() {
+        return ['open'];
+      }
+
+      get open() {
+        return this.hasAttribute('open');
+      }
+
+      set open(val) {
+        if (val) {
+          this.setAttribute('open', '');
+        } else {
+          this.removeAttribute('open');
+        }
+      }
+
+      get url() {
+        return this.getAttribute('url');
+      }
+
+      set url(newUrl) {
+        this.setAttribute('url', newUrl);
+      }
+
+      constructor() {
+        super();
+
+        // Attach a shadow root to the element.
+        let shadowRoot = this.attachShadow({mode: 'open'});
+        shadowRoot.appendChild(tmpl.content.cloneNode(true));
+
+        // doesn't work in Angular otherwise... not sure why
+        setTimeout(()=> {
+          this.iframeElem = shadowRoot.querySelector('.iframe');
+          this.iframeElem.src = this.url;
+
+          this.outerElem = shadowRoot.querySelector('.modal-outer');
+          this.closeElem = shadowRoot.querySelector('.close');
+
+          this.outerElem.addEventListener('click', this.close.bind(this));
+          this.closeElem.addEventListener('click', this.close.bind(this));
+        }, 1);
+      }
+
+      connectedCallback() {
+
+      }
+
+      disconnectedCallback() {
+
+      }
+
+      attributeChangedCallback(attrName, oldVal, newVal) {
+        if (this.open) {
+          this.open();
+        } else {
+          this.close();
+        }
+      }
+
+      close(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        this.outerElem.classList.remove("open");
+      }
+
+      open() {
+        this.outerElem.classList.add("open");
+      }
+    });
+  })()
+</script>
