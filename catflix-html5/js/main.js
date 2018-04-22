@@ -1,6 +1,6 @@
 (()=> {
-  const profiles = document.querySelectorAll("catflix-profile-thumb");
-  const modals = document.querySelectorAll("catflix-modal");
+  const profiles = document.querySelectorAll("netflix-profile-thumb");
+  const modals = document.querySelectorAll("netflix-modal");
 
   const openModal = (modalIndex) => {
     modals[modalIndex].setAttribute("open", "");

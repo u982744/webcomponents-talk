@@ -1,4 +1,4 @@
-<template id="catflix-logo">
+<template id="netflix-logo">
   <style>
     img {
       max-width: 100px;
@@ -6,16 +6,16 @@
     }
   </style>
   <a href="#">
-    <img alt="Catflix" title="Catflix">
+    <img alt="netflix" title="netflix">
   </a>
 </template>
 
 <script>
   (() => {
-    let tmpl = document.currentScript.ownerDocument.querySelector('#catflix-logo');
-    let templateBaseUrl = tmpl.baseURI.replace('catflix-logo.html', '');
+    let tmpl = document.currentScript.ownerDocument.querySelector('#netflix-logo');
+    let templateBaseUrl = tmpl.baseURI.replace('netflix-logo.html', '');
 
-    window.customElements.define('catflix-logo', class extends HTMLElement {
+    window.customElements.define('netflix-logo', class extends HTMLElement {
       get img() {
         return this.getAttribute('img');
       }
@@ -33,7 +33,6 @@
 
         // doesn't work in Angular otherwise... not sure why
         setTimeout(()=> {
-          console.log("this.img", this.img);
           let imgPath = this.img === null ? `${templateBaseUrl}logo2.png` : this.img;
           let img = shadowRoot.querySelector('img');
           img.src = imgPath;

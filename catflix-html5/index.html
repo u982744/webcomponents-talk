@@ -18,9 +18,9 @@
 
         <style>
             :root {
-                --catflix-color-primary: rgb(59, 34, 28);
-                --catflix-color-secondary: rgb(82, 64, 56);
-                --catflix-color-border: rgba(255, 255, 255,.4);
+                --netflix-color-primary: rgb(59, 34, 28);
+                --netflix-color-secondary: rgb(82, 64, 56);
+                --netflix-color-border: rgb(216, 164, 130);
             }
 
             body {
@@ -28,11 +28,11 @@
             }
         </style>
 
-        <link rel="import" href="assets/webcomponents/catflix-logo/catflix-logo.html">
-        <link rel="import" href="assets/webcomponents/catflix-cta/catflix-cta.html">
-        <link rel="import" href="assets/webcomponents/catflix-profile-thumb/catflix-profile-thumb.html">
-        <link rel="import" href="assets/webcomponents/catflix-button/catflix-button.html">
-        <link rel="import" href="assets/webcomponents/catflix-modal/catflix-modal.html">
+        <link rel="import" href="assets/webcomponents/netflix-logo/netflix-logo.html">
+        <link rel="import" href="assets/webcomponents/netflix-cta/netflix-cta.html">
+        <link rel="import" href="assets/webcomponents/netflix-profile-thumb/netflix-profile-thumb.html">
+        <link rel="import" href="assets/webcomponents/netflix-button/netflix-button.html">
+        <link rel="import" href="assets/webcomponents/netflix-modal/netflix-modal.html">
     </head>
     <body>
         <!--[if lte IE 9]>
@@ -40,26 +40,26 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <catflix-modal url="https://www.youtube.com/embed/nGeKSiCQkPw?rel=0"></catflix-modal>
-        <catflix-modal url="https://www.youtube.com/embed/AZoEJBsjjuY?rel=0"></catflix-modal>
-        <catflix-modal url="https://www.youtube.com/embed/CQzUsTFqtW0?rel=0"></catflix-modal>
-        <catflix-modal url="https://www.youtube.com/embed/qXo3NFqkaRM?rel=0"></catflix-modal>
+        <netflix-modal url="https://www.youtube.com/embed/nGeKSiCQkPw?rel=0"></netflix-modal>
+        <netflix-modal url="https://www.youtube.com/embed/AZoEJBsjjuY?rel=0"></netflix-modal>
+        <netflix-modal url="https://www.youtube.com/embed/CQzUsTFqtW0?rel=0"></netflix-modal>
+        <netflix-modal url="https://www.youtube.com/embed/qXo3NFqkaRM?rel=0"></netflix-modal>
 
         <div class="container flex">
             <div class="logo">
-                <catflix-logo img='img/dogflix-logo.png'></catflix-logo>
+                <netflix-logo img='img/dogflix-logo.png'></netflix-logo>
             </div>
             <div class="cta">
-                <catflix-cta text="Who's watching?"></catflix-cta>
+                <netflix-cta text="Who's watching?"></netflix-cta>
             </div>
             <div class="profiles">
-                <catflix-profile-thumb img="img/dog1.jpeg" name="Pooch"></catflix-profile-thumb>
-                <catflix-profile-thumb img="img/dog2.jpg" name="Mr Charlie"></catflix-profile-thumb>
-                <catflix-profile-thumb img="img/dog3.jpg" name="Pickle"></catflix-profile-thumb>
-                <catflix-profile-thumb img="img/dog4.jpg" name="Walter"></catflix-profile-thumb>
+                <netflix-profile-thumb img="img/dog1.jpeg" name="Pooch"></netflix-profile-thumb>
+                <netflix-profile-thumb img="img/dog2.jpg" name="Mr Charlie"></netflix-profile-thumb>
+                <netflix-profile-thumb img="img/dog3.jpg" name="Pickle"></netflix-profile-thumb>
+                <netflix-profile-thumb img="img/dog4.jpg" name="Walter"></netflix-profile-thumb>
             </div>
             <div class="manage">
-                <catflix-button>Manage profiles</catflix-button>
+                <netflix-button>Manage profiles</netflix-button>
             </div>
         </div>
 

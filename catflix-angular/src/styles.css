@@ -1,9 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
 :root {
-    --catflix-color-primary: rgb(51, 2, 44);
-    --catflix-color-secondary: rgb(116, 51, 89);
-    --catflix-color-border: rgb(255, 5, 192);
+    --netflix-color-primary: rgb(44, 2, 38);
+    --netflix-color-secondary: rgb(116, 51, 89);
+    --netflix-color-border: rgb(252, 217, 240);
 }
 
 body {

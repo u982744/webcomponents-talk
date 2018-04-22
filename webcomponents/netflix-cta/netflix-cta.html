@@ -1,10 +1,10 @@
-<template id="catflix-cta">
+<template id="netflix-cta">
   <style>
     :host {
       font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
       font-weight: normal;
       width: 100%;
-      color: var(--catflix-color-primary, #fff);
+      color: var(--netflix-color-primary, #fff);
       font-size: 1.85vw;
     }
   </style>
@@ -13,9 +13,9 @@
 
 <script>
   (() => {
-    let tmpl = document.currentScript.ownerDocument.querySelector('#catflix-cta');
+    let tmpl = document.currentScript.ownerDocument.querySelector('#netflix-cta');
 
-    window.customElements.define('catflix-cta', class extends HTMLElement {
+    window.customElements.define('netflix-cta', class extends HTMLElement {
       constructor() {
         super();
 
