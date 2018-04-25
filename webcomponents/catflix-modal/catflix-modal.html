@@ -99,11 +99,13 @@
       }
 
       disconnectedCallback() {
-
+        this.outerElem.removeEventListener("click", this.close);
+        this.closeElem.removeEventListener("click", this.close);
       }
 
       attributeChangedCallback(attrName, oldVal, newVal) {
-        if (this.open) {
+        // console.log("attributeChangedCallback", attrName, oldVal, newVal);
+        if (newVal === 'true') {
           this.open();
         } else {
           this.close();
@@ -111,9 +113,13 @@
       }
 
       close(e) {
-        e.stopPropagation();
-        e.preventDefault();
+        if (e) {
+          e.stopPropagation();
+          e.preventDefault();
+        }
+
         this.outerElem.classList.remove("open");
+        this.outerElem.dispatchEvent(new Event('modalClose', {bubbles: true, composed: true}));
       }
 
       open() {

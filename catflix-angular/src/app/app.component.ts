@@ -2,7 +2,32 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  template: `
+    <catflix-modal
+      *ngFor='let modal of modals; let i = index;'
+      [attr.url]="'https://www.youtube.com/embed/' + modal.id + '?rel=0'"
+      [attr.open]='modal.open'
+      (modalClose)="modalClose(i)"></catflix-modal>
+
+    <div class="container flex">
+      <div class="logo">
+        <catflix-logo></catflix-logo>
+      </div>
+      <div class="cta">
+        <catflix-cta text="Who's watching?"></catflix-cta>
+      </div>
+      <div class="profiles">
+          <catflix-profile-thumb
+            *ngFor="let profile of profiles; let i = index"
+            [attr.img]="'/assets/imgs/' + profile.img"
+            [name]="profile.name"
+            (click)='viewVideo(i)'></catflix-profile-thumb>
+      </div>
+      <div class="manage">
+        <catflix-button>Manage profiles</catflix-button>
+      </div>
+    </div>
+  `,
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
@@ -32,7 +57,11 @@ export class AppComponent {
     { img: 'cat-7.png', name: 'Garfield'}
   ];
 
-  viewVideo(index) {
+  public viewVideo(index) {
     this.modals[index].open = true;
+  }
+
+  public modalClose(index) {
+    this.modals[index].open = false;
   }
 }

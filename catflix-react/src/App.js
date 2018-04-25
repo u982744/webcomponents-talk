@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import CatflixModal from './CatflixModal';
 
 class App extends Component {
 
@@ -37,10 +38,12 @@ class App extends Component {
     return (
       <div className="container flex">
         {
-          this.state.modals.map((modal) => (
-            <catflix-modal
+          this.state.modals.map((modal, index) => (
+            <CatflixModal
+              key={ modal.id }
               url={ 'https://www.youtube.com/embed/' + modal.id + '?rel=0' }
-              open={ modal.open }></catflix-modal>
+              open={ modal.open }
+              onModalClose={() => this.modalClose(index) }></CatflixModal>
           ))
         }
         <div className="logo">
@@ -53,6 +56,7 @@ class App extends Component {
           {
             this.state.profiles.map((profile, index) => (
               <catflix-profile-thumb
+                key={ profile.img }
                 img={ profile.img }
                 name={ profile.name }
                 onClick={ () => { this.viewVideo(index); } }></catflix-profile-thumb>
@@ -67,13 +71,18 @@ class App extends Component {
   }
 
   viewVideo(index) {
-    console.log("viewVideo", index);
     const newModals = [...this.state.modals];
     newModals[index].open = true;
     this.setState({
       modals: newModals
-    }, () => {
-      console.log(this.state);
+    });
+  }
+
+  modalClose(index) {
+    const newModals = [...this.state.modals];
+    newModals[index].open = false;
+    this.setState({
+      modals: newModals
     });
   }
 }
