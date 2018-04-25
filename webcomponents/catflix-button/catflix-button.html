@@ -1,8 +1,8 @@
-<template id="netflix-button">
+<template id="catflix-button">
     <style>
       a {
-        border: 1px solid var(--netflix-color-secondary, grey);
-        color: var(--netflix-color-secondary, grey);
+        border: 1px solid var(--catflix-color-secondary, grey);
+        color: var(--catflix-color-secondary, grey);
         text-transform: uppercase;
         padding: .5em 1.5em;
         letter-spacing: 2px;
@@ -12,8 +12,8 @@
       }
 
       a:hover {
-        color: var(--netflix-color-primary, #fff);
-        border: 1px solid var(--netflix-color-primary, #fff);
+        color: var(--catflix-color-primary, #fff);
+        border: 1px solid var(--catflix-color-primary, #fff);
       }
     </style>
     <a href="#"><slot></slot></a>
@@ -21,9 +21,9 @@
 
   <script>
     (() => {
-      let tmpl = document.currentScript.ownerDocument.querySelector('#netflix-button');
+      let tmpl = document.currentScript.ownerDocument.querySelector('#catflix-button');
 
-      window.customElements.define('netflix-button', class extends HTMLElement {
+      window.customElements.define('catflix-button', class extends HTMLElement {
         constructor() {
           super();
 

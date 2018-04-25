@@ -1,23 +1,23 @@
-<netflix-modal
+<catflix-modal
     *ngFor='let modal of modals'
     [attr.url]="'https://www.youtube.com/embed/' + modal.id + '?rel=0'"
-    [attr.open]='modal.open'></netflix-modal>
+    [attr.open]='modal.open'></catflix-modal>
 
 <div class="container flex">
     <div class="logo">
-        <netflix-logo></netflix-logo>
+        <catflix-logo></catflix-logo>
     </div>
     <div class="cta">
-        <netflix-cta text="Who's watching?"></netflix-cta>
+        <catflix-cta text="Who's watching?"></catflix-cta>
     </div>
     <div class="profiles">
-        <netflix-profile-thumb
+        <catflix-profile-thumb
             *ngFor="let profile of profiles; let i = index"
             [attr.img]="'/assets/imgs/' + profile.img"
             [name]="profile.name"
-            (click)='viewVideo(i)'></netflix-profile-thumb>
+            (click)='viewVideo(i)'></catflix-profile-thumb>
     </div>
     <div class="manage">
-        <netflix-button>Manage profiles</netflix-button>
+        <catflix-button>Manage profiles</catflix-button>
     </div>
 </div>

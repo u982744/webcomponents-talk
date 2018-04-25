@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('netflix-angular App', () => {
+describe('catflix-angular App', () => {
   let page: AppPage;
 
   beforeEach(() => {

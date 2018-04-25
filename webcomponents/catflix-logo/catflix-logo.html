@@ -1,4 +1,4 @@
-<template id="netflix-logo">
+<template id="catflix-logo">
   <style>
     img {
       max-width: 100px;
@@ -12,10 +12,10 @@
 
 <script>
   (() => {
-    let tmpl = document.currentScript.ownerDocument.querySelector('#netflix-logo');
-    let templateBaseUrl = tmpl.baseURI.replace('netflix-logo.html', '');
+    let tmpl = document.currentScript.ownerDocument.querySelector('#catflix-logo');
+    let templateBaseUrl = tmpl.baseURI.replace('catflix-logo.html', '');
 
-    window.customElements.define('netflix-logo', class extends HTMLElement {
+    window.customElements.define('catflix-logo', class extends HTMLElement {
       get img() {
         return this.getAttribute('img');
       }

@@ -1,4 +1,4 @@
-<template id="netflix-profile-thumb">
+<template id="catflix-profile-thumb">
     <style>
       :host {
         display: inline-block;
@@ -30,7 +30,7 @@
         box-sizing: border-box;
         position: relative;
         text-decoration: none;
-        border: .3em solid var(--netflix-color-secondary, rgba(0,0,0,.4));
+        border: .3em solid var(--catflix-color-secondary, rgba(0,0,0,.4));
         background-repeat: no-repeat;
         -moz-background-size: cover;
         background-size: cover;
@@ -39,14 +39,14 @@
       }
 
       a:hover .profile-icon {
-        border-color: var(--netflix-color-border, white);
+        border-color: var(--catflix-color-border, white);
       }
 
       .profile-name {
         font-size: 12px;
         line-height: 1.2em;
         min-height: 2.4em;
-        color: var(--netflix-color-secondary, grey);
+        color: var(--catflix-color-secondary, grey);
         display: block;
         text-align: center;
         font-size: 1.3vw;
@@ -57,7 +57,7 @@
       }
 
       a:hover .profile-name {
-        color: var(--netflix-color-primary, white);
+        color: var(--catflix-color-primary, white);
       }
     </style>
     <a href="#">
@@ -72,10 +72,10 @@
 
   <script>
     (() => {
-      let tmpl = document.currentScript.ownerDocument.querySelector('#netflix-profile-thumb');
-      let templateBaseUrl = tmpl.baseURI.replace('netflix-profile-thumb.html', '');
+      let tmpl = document.currentScript.ownerDocument.querySelector('#catflix-profile-thumb');
+      let templateBaseUrl = tmpl.baseURI.replace('catflix-profile-thumb.html', '');
 
-      window.customElements.define('netflix-profile-thumb', class extends HTMLElement {
+      window.customElements.define('catflix-profile-thumb', class extends HTMLElement {
         constructor() {
           super();
 

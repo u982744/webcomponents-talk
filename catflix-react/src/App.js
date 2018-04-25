@@ -38,29 +38,29 @@ class App extends Component {
       <div className="container flex">
         {
           this.state.modals.map((modal) => (
-            <netflix-modal
+            <catflix-modal
               url={ 'https://www.youtube.com/embed/' + modal.id + '?rel=0' }
-              open={ modal.open }></netflix-modal>
+              open={ modal.open }></catflix-modal>
           ))
         }
         <div className="logo">
-          <netflix-logo img='netflix-logo.png'></netflix-logo>
+          <catflix-logo img='netflix-logo.png'></catflix-logo>
         </div>
         <div className="cta">
-          <netflix-cta text="Who's watching?"></netflix-cta>
+          <catflix-cta text="Who's watching?"></catflix-cta>
         </div>
         <div className="profiles">
           {
             this.state.profiles.map((profile, index) => (
-              <netflix-profile-thumb
+              <catflix-profile-thumb
                 img={ profile.img }
                 name={ profile.name }
-                onClick={ () => { this.viewVideo(index); } }></netflix-profile-thumb>
+                onClick={ () => { this.viewVideo(index); } }></catflix-profile-thumb>
             ))
           }
         </div>
         <div className="manage">
-          <netflix-button>Manage profiles</netflix-button>
+          <catflix-button>Manage profiles</catflix-button>
         </div>
       </div>
     );
